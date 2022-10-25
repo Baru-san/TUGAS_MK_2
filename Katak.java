@@ -18,5 +18,15 @@ public class Katak {
         return skor;
     }
 
-    
+    public void setSkor(int skorBaru){
+
+    }
+
+    public void loncatDekat(){
+        //loncat 1 langkah
+    }
+
+    public void loncatJauh(){
+        
+    }
 }
