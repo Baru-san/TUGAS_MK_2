@@ -3,11 +3,11 @@ public class Monster {
     private String nama;
     
     public Monster(){
-        nilai = 0;
+        nilai = 10;
         nama="juminem";
     }
 
-    public  void Koin(int nilai, String nama){
+    public Monster(int nilai, String nama){
         this.nilai = nilai;
         this.nama = nama;
     }

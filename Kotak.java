@@ -3,7 +3,8 @@ public class Kotak {
     private Monster monsta;
     
     public Kotak(){
-
+        coin = new Koin();
+        monsta = new Monster();
     }
 
     public void addKoin(Koin c){
@@ -15,6 +16,7 @@ public class Kotak {
     }
 
     public Koin getKoin(){
+
         return coin;
     }
 
@@ -23,10 +25,22 @@ public class Kotak {
     }
 
     public boolean isThereKoin(){
+        if(coin.getNilai() == 1){
         return true;
+        }
+        else 
+        return false;
     }
 
     public boolean isThereMonster(){
-        return false;
+        if(monsta.getNilai() == 1){
+            return true;
+            }
+            else 
+            return false;
     }
+
+      public String toString(){
+          return coin.getNilai() + " " + monsta.getNilai() ;
+      }
 }

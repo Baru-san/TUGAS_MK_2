@@ -1,0 +1,57 @@
+detai tugas 2 mk pbo
+
+
+class, atribut atu method dapat ditambahkan
+
+
+kelas kotak:
+dalam 1 kotak bisa terdapat koin dan monster secara bersamaan
+method isThereKoin untuk mendeteksi koin
+method isThereMonster untuk mendeteksi monster
+
+
+kelas KotakPermainan:
+jumKotak, jumlah kotak permainan
+jumlahkoin, jumlah koin yang ada di permainan
+jumlah monster, jumlah monster yang ada di permainan
+method generateAcak() dan inisialisasiKotak() dipanggil di 
+method construktor
+generateacak(), menghasilkan nilai acak sesuai dengan jumlah kotak
+acakkoin[], menyimpan nilai acak sebanyak jumlahkoin
+acakmonster[], menyimpan nilai acak untuk posisi monster sebanyak 
+jumlahmonster
+!!! variabel acak yang ada di acakkoin dan acakmonster di urutkan 
+terlebih dahulu
+inisialisasikotak(), membuat kotak sebanyak jumKotak, 
+lalu menambahkan koin dan monster
+sesuai indeks pada acakkoin dan acakmonster.
+contain(), untuk mengecek koin dan monster pada kotak di posisi tertentu
+jika koin skor bertambah, jika monster skor berkurang. 
+akan mengembalikan skor
+
+
+kelas katak:
+skor bermula 100,
+method loncatDekat(), katak loncat 1 kotak.
+method loncatjauh(), katak loncat 2 kotak.
+
+
+kelas MainLompatKatak:
+Penjelasan tambahan untuk class MainLompatKatak: 
+class ini merupakan tempat logika permainan 
+“Lompat hai katak, lompat!” dimasukkan. 
+Logika permainan sama seperti Tugas 1 namun pada tugas ini 
+akan mempergunakan semua class-class tersebut.
+
+
+Bantuan: Untuk menghasilkan nilai acak yang tidak berulang, 
+anda bisa coba kode program berikut ini.
+ArrayList<Integer> list = new ArrayList<Integer>();
+for (int i=0; i<10; i++) 
+ list.add(i);
+Collections.shuffle(list);
+for(int i=0; i<10; i++){
+ System.out.println(list.get(i));
+}
+Jangan lupa untuk 
+import java.util.ArrayList; dan import java.util.Collections

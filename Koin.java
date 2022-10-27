@@ -2,11 +2,11 @@ public class Koin{
     private int nilai;
     
     public Koin(){
-        nilai = 0;
+        nilai = 20;
     }
 
-    public  void Koin(int nilai){
-        nilai = this.nilai;
+    public Koin(int nilai){
+        this.nilai = nilai;
     }
 
     public int getNilai(){

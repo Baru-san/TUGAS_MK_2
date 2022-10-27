@@ -3,7 +3,7 @@ public class Katak {
     private int skor;
 
     public Katak(){
-
+        skor = 100;
     }
 
     public int getPosisi(){
@@ -24,6 +24,7 @@ public class Katak {
 
     public void loncatDekat(){
         //loncat 1 langkah
+        
     }
 
     public void loncatJauh(){
