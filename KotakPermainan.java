@@ -64,33 +64,54 @@ public class KotakPermainan {
         Arrays.sort(acakKoin);
         Arrays.sort(acakMonster);
 
-        // for (int num : acakKoin){
-        //     System.out.print(num + " ");
-        // }
+        for (int num : acakKoin){
+            System.out.print(num + " ");
+        }
 
-        // System.out.println("\n");
+        System.out.println("\n");
 
-        // for (int num : acakMonster){
-        //     System.out.print(num + " ");
-        // }
+         for (int num : acakMonster){
+             System.out.print(num + " ");
+         }
     }
 
     private void inisialisasiKotak(){
         boardGame = new Kotak[jumKotak];
 
-        for (int i = 0 ; i < boardGame.length ; i++){
-            Koin teskoin = new Koin(i);
-            Monster tesmonster = new Monster(i,"jojo");
-            boardGame[i] = new Kotak();
-            boardGame[i].addKoin(teskoin);
-            boardGame[i].addMonster(tesmonster);
-            
 
-            // System.out.print("iterasi ke - " + i + " \n");
+        for (int i = 0 ; i < boardGame.length ; i++){
+            boardGame[i] = new Kotak();
+            int countk = 0;
+            int countm = 0;
+            while (countk < acakKoin.length){
+                for ( int j = 0 ; j < acakKoin.length ; j++){
+                    if (acakKoin[j] == i){
+                        Koin teskoin = new Koin(1);
+                        boardGame[i].addKoin(teskoin);
+                        break;
+                    }
+                }
+                countk++;
+            }
             
-            // System.out.println("apakah ada koin " + boardGame[i].isThereKoin());
-            // System.out.println("apakah ada monster " + boardGame[i].isThereMonster());
-    }
+            while (countm < acakMonster.length){
+                for (int j = 0 ; j < acakMonster.length ; j++){
+                    if (acakMonster[j] == i){
+                        Monster tesmonster = new Monster(1,"jojo");
+                        boardGame[i].addMonster(tesmonster);
+                        break;
+                        }
+                }
+                countm++;
+            }
+
+
+            System.out.println("\n");
+            System.out.print("iterasi ke - " + i + " \n");
+            
+            System.out.println("apakah ada koin " + boardGame[i].isThereKoin());
+            System.out.println("apakah ada monster " + boardGame[i].isThereMonster());
+    
     
     }
 
@@ -112,4 +133,5 @@ public class KotakPermainan {
     //         boardGame.isThereMonster() = false;
     //     }
     // }
+}
 }
