@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-import javax.print.event.PrintJobListener;
+// import javax.print.event.PrintJobListener;
 import java.util.*;
 import java.util.Collections;
 import java.util.Arrays;
@@ -12,6 +12,7 @@ public class KotakPermainan {
     private int jumlahMonster;
     private int[] acakKoin;
     private int[] acakMonster;
+    int skortemp = 0;  
 
     public KotakPermainan(int j, int jk, int jm){
         this.jumKotak = j;
@@ -20,25 +21,6 @@ public class KotakPermainan {
         generateAcak();
         inisialisasiKotak();
     }
-
-    // public static void main(String[] args) {
-    //     KotakPermainan kt = new KotakPermainan(5, 0, 0);
-    //     //System.out.print(kt.jumKotak);
-    //     // for (int element : kt.acakKoin){
-    //     //     System.out.println(element);
-    //     // }
-    //     // System.out.println("\n");
-    //     // for (int element : kt.acakMonster){
-    //     //     System.out.println(element);
-    //     // }
-
-    //     kt.inisialisasiKotak();
-
-
-    //     // for (Kotak element : kt.boardGame){
-    //     //          System.out.println(element);
-    //     // }
-    // }
 
     private void generateAcak(){
         ArrayList<Integer> list = new ArrayList<Integer>();
@@ -49,27 +31,21 @@ public class KotakPermainan {
         acakKoin = new int[jumlahKoin];
         for(int i=0; i<acakKoin.length; i++){ // jumlah ngka yang akan diambil
             acakKoin[i] = list.get(i);
-            //System.out.println(acakKoin[i]);
         }
-        
-        
+              
         Collections.shuffle(list);
         acakMonster = new int[jumlahMonster];
         for(int i=0; i<acakMonster.length; i++){ // jumlah ngka yang akan diambil
-
             acakMonster[i] = list.get(i);
-            //System.out.println(acakMonster[i]);
         }
 
         Arrays.sort(acakKoin);
         Arrays.sort(acakMonster);
-
         for (int num : acakKoin){
             System.out.print(num + " ");
         }
 
         System.out.println("\n");
-
          for (int num : acakMonster){
              System.out.print(num + " ");
          }
@@ -77,7 +53,6 @@ public class KotakPermainan {
 
     private void inisialisasiKotak(){
         boardGame = new Kotak[jumKotak];
-
 
         for (int i = 0 ; i < boardGame.length ; i++){
             boardGame[i] = new Kotak();
@@ -105,33 +80,53 @@ public class KotakPermainan {
                 countm++;
             }
 
+            // if (boardGame[i].isThereKoin() == true){
+                
+            //     System.out.println("anda mendapatkan koin, skor bertambah 10");
 
-            System.out.println("\n");
-            System.out.print("iterasi ke - " + i + " \n");
+            // }
+
+            // if (boardGame[i].isThereMonster() == true){
+
+            //     System.out.println("anda bertemu monster, skor berkurang 5");
+
+            // }
+
+            // System.out.println("\n");
+            // System.out.print("iterasi ke - " + i + " \n");
             
-            System.out.println("apakah ada koin " + boardGame[i].isThereKoin());
-            System.out.println("apakah ada monster " + boardGame[i].isThereMonster());
+            // System.out.println("apakah ada koin " + boardGame[i].isThereKoin());
+            // System.out.println("apakah ada monster " + boardGame[i].isThereMonster());
+    
+        }
+    }
+
+    public int contain(int posisi){
+
+        //for (int i = 0 ; i < boardGame.length ; i++){
+            //boardGame[i] = new Kotak();
+           
+            if (boardGame[posisi].isThereKoin() == true){
+                skortemp += 10;
+                System.out.println("anda mendapatkan koin, skor bertambah 10");
+                System.out.println("skor = " + skortemp + "\n");
+            }
+
+            if (boardGame[posisi].isThereMonster() == true){
+                skortemp -= 5;
+                System.out.println("anda bertemu monster, skor berkurang 5");
+                System.out.println("skor = " + skortemp +"\n");
+            }
+        //}
+        return skortemp;
+            // System.out.println("\n");
+            // System.out.print("iterasi ke - " + i + " \n");
+            
+            // System.out.println("apakah ada koin " + boardGame[i].isThereKoin());
+            // System.out.println("apakah ada monster " + boardGame[i].isThereMonster());
+    
     
     
     }
 
-    // public int contain(int posisi){
-    //     if (boardGame[posisi].equals(acakKoin[posisi]) && boardGame[posisi].equals(acakKoin[posisi])){
-    //         boardGame.isThereKoin() = true;
-    //         boardGame.isThereMonster = true;
-    //     }
-    //     else if (boardGame[posisi].equals(acakKoin[posisi])){
-    //         boardGame.isThereKoin() = true;
-    //         boardGame.isThereMonster() = false;
-    //     }
-    //     else if (boardGame[posisi].equals(acakMonster[posisi])){
-    //         boardGame.isThereKoin() = false;
-    //         boardGame.isThereMonster() = true;
-    //     }
-    //     else {
-    //         boardGame.isThereKoin() = false;
-    //         boardGame.isThereMonster() = false;
-    //     }
-    // }
-}
 }

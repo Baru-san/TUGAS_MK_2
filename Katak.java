@@ -4,6 +4,7 @@ public class Katak {
 
     public Katak(){
         skor = 100;
+        posisi = -1;
     }
 
     public int getPosisi(){
@@ -11,7 +12,15 @@ public class Katak {
     }
 
     public void setPosisi(int posisiBaru){
-
+        if (posisiBaru == 1){
+            loncatDekat();
+        }
+        else if (posisiBaru == 2){
+            loncatJauh();
+        }
+        else{
+            System.out.println("input salah \n");
+        }
     }
 
     public int getSkor(){
@@ -19,15 +28,15 @@ public class Katak {
     }
 
     public void setSkor(int skorBaru){
-
+        this.skor = skorBaru;
     }
 
     public void loncatDekat(){
-        //loncat 1 langkah
+        posisi += 1;
         
     }
 
     public void loncatJauh(){
-        
+        posisi += 2;
     }
 }
