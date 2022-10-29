@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
-// import javax.print.event.PrintJobListener;
-import java.util.*;
 import java.util.Collections;
 import java.util.Arrays;
 
@@ -49,6 +46,7 @@ public class KotakPermainan {
          for (int num : acakMonster){
              System.out.print(num + " ");
          }
+         System.out.println("\n");
     }
 
     private void inisialisasiKotak(){

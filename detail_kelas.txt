@@ -1,0 +1,22 @@
+katak :
+skor
+posisi
+
+koin :
+nilai
+
+monster :
+nilai
+nama
+
+pemain :
+nama
+nilai
+
+kotak :
+koin
+monster
+
+kotak permainan
+kotak[]
+

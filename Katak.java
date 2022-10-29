@@ -4,7 +4,7 @@ public class Katak {
 
     public Katak(){
         skor = 100;
-        posisi = -1;
+        posisi =- 1;
     }
 
     public int getPosisi(){
@@ -28,12 +28,13 @@ public class Katak {
     }
 
     public void setSkor(int skorBaru){
-        this.skor = skorBaru;
+        this.skor += skorBaru;
+
     }
 
     public void loncatDekat(){
         posisi += 1;
-        
+        System.out.println("posisi anda saat ini " + (posisi+1));
     }
 
     public void loncatJauh(){
