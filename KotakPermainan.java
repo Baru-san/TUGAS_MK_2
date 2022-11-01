@@ -1,7 +1,13 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Arrays;
-
+/**
+ * Program KotakPermainan akan menciptakan array
+ * kotak yang akan dijelajahi katak
+ * 
+ * @author Muhammad Akbarul Ihsan
+ * @version 11.0.15.1
+ */
 public class KotakPermainan {
     private Kotak[] boardGame;
     private int jumKotak;
@@ -11,6 +17,14 @@ public class KotakPermainan {
     private int[] acakMonster;
     int skortemp = 0;  
 
+    /**
+     * method untuk menciptakan objek KotakPermainan
+     * @param j parameter pertama pada method constructor
+     * @param jk parameter kedua pada method constructor
+     * @param jm parameter ketiga pada method constructor
+     * @return nothing
+     * 
+     */
     public KotakPermainan(int j, int jk, int jm){
         this.jumKotak = j;
         this.jumlahKoin = jk;
@@ -19,6 +33,11 @@ public class KotakPermainan {
         inisialisasiKotak();
     }
 
+    /**
+     * method untuk mmenghasilkan angka acak
+     * @return nothing
+     * 
+     */
     private void generateAcak(){
         ArrayList<Integer> list = new ArrayList<Integer>();
         for (int i=0; i<jumKotak; i++) //rentang angka yang akan di acak
@@ -38,17 +57,14 @@ public class KotakPermainan {
 
         Arrays.sort(acakKoin);
         Arrays.sort(acakMonster);
-        for (int num : acakKoin){
-            System.out.print(num + " ");
-        }
-
-        System.out.println("\n");
-         for (int num : acakMonster){
-             System.out.print(num + " ");
-         }
-         System.out.println("\n");
     }
 
+    /**
+     * method untuk menciptakan array boardGame dan
+     * memberikan nilai ke dalam nya
+     * @return nothing
+     * 
+     */
     private void inisialisasiKotak(){
         boardGame = new Kotak[jumKotak];
 
@@ -70,61 +86,34 @@ public class KotakPermainan {
             while (countm < acakMonster.length){
                 for (int j = 0 ; j < acakMonster.length ; j++){
                     if (acakMonster[j] == i){
-                        Monster tesmonster = new Monster(1,"jojo");
+                        Monster tesmonster = new Monster(1,"j");
                         boardGame[i].addMonster(tesmonster);
                         break;
                         }
                 }
                 countm++;
             }
-
-            // if (boardGame[i].isThereKoin() == true){
-                
-            //     System.out.println("anda mendapatkan koin, skor bertambah 10");
-
-            // }
-
-            // if (boardGame[i].isThereMonster() == true){
-
-            //     System.out.println("anda bertemu monster, skor berkurang 5");
-
-            // }
-
-            // System.out.println("\n");
-            // System.out.print("iterasi ke - " + i + " \n");
-            
-            // System.out.println("apakah ada koin " + boardGame[i].isThereKoin());
-            // System.out.println("apakah ada monster " + boardGame[i].isThereMonster());
-    
         }
     }
 
+    /**
+     * method untuk mengecek keberadaan koin dan monster
+     * @param posisi parameter pertama pada method contain
+     * @return skortemp
+     * 
+     */
     public int contain(int posisi){
-
-        //for (int i = 0 ; i < boardGame.length ; i++){
-            //boardGame[i] = new Kotak();
            
-            if (boardGame[posisi].isThereKoin() == true){
+        if (boardGame[posisi].isThereKoin() == true){
                 skortemp += 10;
                 System.out.println("anda mendapatkan koin, skor bertambah 10");
-                System.out.println("skor = " + skortemp + "\n");
             }
 
-            if (boardGame[posisi].isThereMonster() == true){
+        if (boardGame[posisi].isThereMonster() == true){
                 skortemp -= 5;
                 System.out.println("anda bertemu monster, skor berkurang 5");
-                System.out.println("skor = " + skortemp +"\n");
             }
-        //}
+        
         return skortemp;
-            // System.out.println("\n");
-            // System.out.print("iterasi ke - " + i + " \n");
-            
-            // System.out.println("apakah ada koin " + boardGame[i].isThereKoin());
-            // System.out.println("apakah ada monster " + boardGame[i].isThereMonster());
-    
-    
-    
     }
-
 }
